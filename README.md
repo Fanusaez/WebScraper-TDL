@@ -1,106 +1,134 @@
 # Web Scraper API - TDL
 
-API desarrollada en *Go*, como trabajo práctico para la materia: *Teoría de Lenguaje*.
+Una API con una interfaz gráfica que permite realizar scraping de computadoras y notebooks en diferentes sitios web según parámetros personalizados.
 
-## Integrantes
+## **Integrantes**
 
-- Martin Alejo Polese - 106808
-- Lucas Grati - 102676
-- Edgardo Francisco Saez - 104896
+- **Martin Alejo Polese** - 106808
+- **Lucas Grati** - 102676
+- **Edgardo Francisco Saez** - 104896
 
-## Scripts
+---
 
-Al posicionarte en el directorio correspondiente, se pueden ejecutar los siguientes comandos:
+## **Requisitos previos**
 
-### Frontend
+Asegúrate de tener instalados los siguientes componentes antes de ejecutar el proyecto:
 
-```bash
-npm install
-```
+- [Go](https://go.dev/doc/install)
+- [Node.js](https://nodejs.org/) con npm
 
-Instala las dependencias necesarias para levantar el frontend.
+---
 
-```bash
-npm start
-```
+## **Instalación y ejecución**
 
-Levanta el frontend en modo desarrollo.\
-Abrir [http://localhost:3000](http://localhost:3000) para verlo en el navegador.
+### **Frontend**
 
-### Backend
+1. Posicionarse en el directorio correspondiente al frontend.
+2. Ejecutar el siguiente comando para instalar las dependencias necesarias:
 
-```bash
-go run .
-```
+   ```bash
+   npm install
+   ```
 
-Levanta el servidor en el puerto 8080.
+3. Para levantar el servidor en modo desarrollo, ejecutar:
 
-## Endpoints
+   ```bash
+   npm start
+   ```
 
-Todas las llamadas a los endpoints son con método ***GET***.\
-Recordar de anteponer [http://localhost:8080](http://localhost:8080) en las llamadas a la API.
+   Esto iniciará la aplicación en [http://localhost:3000](http://localhost:3000).
 
-### General
+### **Backend**
 
-Scrapea notebooks de Mercado Libre, Fravega y Fullh4rd
+1. Posicionarse en el directorio correspondiente al backend.
+2. Ejecutar el siguiente comando para iniciar el servidor:
+
+   ```bash
+   go run .
+   ```
+
+   El servidor estará disponible en el puerto 8080.
+
+---
+
+## **Endpoints de la API**
+
+Todas las solicitudes a la API deben realizarse utilizando el método **GET**. Recuerda anteponer la URL base: [http://localhost:8080](http://localhost:8080).
+
+### **General**
+
+Scrapea notebooks de Mercado Libre, Frávega y FullH4rd:
 
 ```bash
 /api/general
 ```
 
-### Mercado Libre
+### **Mercado Libre**
 
-Scrapea notebooks de Mercado Libre
+Scrapea notebooks específicamente de Mercado Libre:
 
 ```bash
 /api/mercadolibre
 ```
 
-### Fravega
+### **Frávega**
 
-Scrapea notebooks de Fravega
+Scrapea notebooks específicamente de Frávega:
 
 ```bash
 /api/fravega
 ```
 
-### FullH4rd
+### **FullH4rd**
 
-Scrapea notebooks de FullH4rd
+Scrapea notebooks específicamente de FullH4rd:
 
 ```bash
 /api/fullh4rd
 ```
 
-## Query parameters
+---
 
-### RAM:
+## **Parámetros de consulta (Query Parameters)**
 
-- MinRam
-- MaxRam
+Puedes personalizar el scraping utilizando los siguientes parámetros:
 
-### Pulgadas:
+### **RAM**:
+- `MinRam`: Memoria RAM mínima (en GB).
+- `MaxRam`: Memoria RAM máxima (en GB).
 
-- MinInches
-- MaxInches
+### **Tamaño de pantalla (pulgadas)**:
+- `MinInches`: Tamaño mínimo de pantalla (en pulgadas).
+- `MaxInches`: Tamaño máximo de pantalla (en pulgadas).
 
-### SSD:
+### **Almacenamiento (SSD)**:
+- `MinStorage`: Almacenamiento SSD mínimo (en GB).
+- `MaxStorage`: Almacenamiento SSD máximo (en GB).
 
-- MinStorage
-- MaxStorage
+### **Precio**:
+- `MinPrice`: Precio mínimo (en moneda local).
+- `MaxPrice`: Precio máximo (en moneda local).
 
-### Precio:
+### **Procesador**:
+- `Processor`: Modelo de procesador deseado (por ejemplo, `i5`, `Ryzen 7`).
 
-- MinPrice
-- MaxPrice
+---
 
-### Procesador:
+## **Videos explicativos**
 
-- Processor
+1. **Instalación y Ejecución**:
+   [Ver en YouTube](https://www.youtube.com/watch?v=jMjJ0GVIAG4&ab_channel=franciscoSaez)
 
-    ***Nota**: Puede ser "amd", "intel" o "apple"*
+2. **Caso de Prueba**:
+   [Ver en YouTube](https://www.youtube.com/watch?v=DANOlJklxLI&ab_channel=franciscoSaez)
 
-## Notas adicionales
+---
+## **Notas adicionales**
 
-- Se debe contar con **Go** y **npm** previo a la ejecución del proyecto.
-- Los **specs** se obtuvieron con regex, por lo cual no siempre es posible obtener todos los datos, y la precisión no es del cien por ciento.
+- Los datos obtenidos se procesan utilizando expresiones regulares (regex), lo que puede afectar la precisión en algunos casos.
+- No siempre se logran extraer todos los atributos debido a la estructura de las páginas web objetivo.
+
+---
+
+Si tienes dudas o necesitas ayuda, por favor contacta a alguno de los integrantes.
+
